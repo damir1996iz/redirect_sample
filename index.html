@@ -6,7 +6,7 @@
     <script>
         document.getElementById("redirectButton").onclick = myFunction;
         function myFunction() {
-          window.location.href = "{{ path('homepage') }}";
+          location.href = "auth://callback";
         }
     </script>
 </body>
