@@ -4,10 +4,10 @@
 <p>Redirecting to XXX app, it will only take few seconds...</p>
 <a href="{{ redirect_url }}" id="redirectButton">Click here to go back to XXX App</a>
     <script>
-        document.getElementById("redirectButton").click();
-            setTimeout(function() {
-                window.location.href = "{{ path('homepage') }}";
-            }, 10000);
+        document.getElementById("redirectButton").onclick = myFunction;
+        function myFunction() {
+          window.location.href = "{{ path('homepage') }}";
+        }
     </script>
 </body>
 </html>
