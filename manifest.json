@@ -1,0 +1,26 @@
+{
+    "lang": "ru-RU",
+    "short_name": "Avito",
+    "start_url": "/",
+    "icons": [{
+        "src": "/icons/apple-touch-icon-144x144-precomposed.png",
+        "sizes": "144x144",
+        "type": "image/png"
+    }, {
+        "src": "/icons/touch-icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }, {
+        "src": "/icons/touch-icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }],
+    "background_color": "#ffffff",
+    "theme_color": "#00aaff",
+    "display": "standalone",
+    "orientation": "portrait",
+    "related_applications": [{
+        "platform": "play",
+        "id": "com.avito.android"
+    }]
+}
