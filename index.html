@@ -8,8 +8,9 @@
 <p>Redirecting to XXX app, it will only take few seconds...</p>
 <button id="redirectButton">Click me to open</button>
     <script>
-        function receiveMessage(data) {
-            window.alert(data);
+        function receiveMessage(input) {
+            var obj = JSON.parse(input)
+            window.alert(input.data.number);
         }
         
         window.addEventListener("message", receiveMessage, false)
