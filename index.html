@@ -7,11 +7,34 @@
 <body>
 <p>Redirecting to XXX app, it will only take few seconds...</p>
 <button id="redirectButton">Click me to open</button>
-<button id="phoneBookButton"><>
     <script>
         document.getElementById("redirectButton").onclick = myFunction;
         function myFunction() {
-            window.webkit.AndroidWebViewHandler.postMessage(JSON.stringify({type: 'phoneNumberHandler', data: 'pivo'}))
+            var d = {
+                "self": {
+                    "number": "89991234567",
+                    "name": "Себе"
+                },
+                "recent": [
+                    {
+                        "number": "89992281799",
+                        "name": "Сабина",
+                        "banks": ["100000000012","100000000016"]
+                    },
+                    {
+                        "number": "89127445589",
+                        "name": "Аня",
+                        "banks": ["100000000056"]
+                    },
+                    {
+                        "number": "89129999888",
+                        "name": "Слава",
+                        "banks": ["100000000206","100000000012","100000000016"]
+                    },
+                ]
+            }
+            
+            window.AndroidWebViewHandler.sendMessage(JSON.stringify({type: 'phoneNumberHandler', data: d }))
         }
     </script>
 </body>
