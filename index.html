@@ -9,8 +9,7 @@
 <button id="redirectButton">Click me to open</button>
     <script>
         function receiveMessage(input) {
-            var obj = JSON.parse(input.data)
-            window.alert(obj.data.number);
+            window.alert(input.data.data.number);
         }
         
         window.addEventListener("message", receiveMessage, false)
