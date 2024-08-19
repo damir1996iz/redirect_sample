@@ -11,7 +11,7 @@
     <script>
         document.getElementById("redirectButton").onclick = myFunction;
         function myFunction() {
-            window.AndroidWebViewHandler.postMessage(JSON.stringify({type: 'phoneNumberHandler', data: 'pivo'}))
+            window.webkit.AndroidWebViewHandler.postMessage(JSON.stringify({type: 'phoneNumberHandler', data: 'pivo'}))
         }
     </script>
 </body>
