@@ -8,6 +8,8 @@
 <p>Redirecting to XXX app, it will only take few seconds...</p>
 <button id="redirectButton">Click me to open</button>
     <script>
+        window.addEventListener("message", receiveMessage, false)
+        
         document.getElementById("redirectButton").onclick = myFunction;
         function myFunction() {
             var d = {
@@ -35,6 +37,10 @@
             }
             
             window.AndroidWebViewHandler.sendMessage(JSON.stringify({type: 'phoneNumberHandler', data: d }))
+        }
+
+        funcion receiveMessage(data) {
+            window.alert(data);
         }
     </script>
 </body>
