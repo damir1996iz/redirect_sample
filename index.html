@@ -10,7 +10,7 @@
     <script>
         function receiveMessage(input) {
             var obj = JSON.parse(input)
-            window.alert(input.data.number);
+            window.alert(obj.data.number);
         }
         
         window.addEventListener("message", receiveMessage, false)
