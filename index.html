@@ -7,6 +7,7 @@
 <body>
 <p>Opening phone book. Some numbers will be sended to book</p>
 <button id="redirectButton">Click me to open</button>
+<button id="redirectButton2">Click me to open UNIVERSAL</button>
     <script>
         function receiveMessage(input) {
             window.alert(input.data.data.number);
@@ -15,6 +16,7 @@
         window.addEventListener("message", receiveMessage, false)
         
         document.getElementById("redirectButton").onclick = myFunction;
+        document.getElementById("redirectButton2").onclick = myFunction2;
         function myFunction() {
             var d = {
                 "self": {
@@ -38,6 +40,35 @@
                         "banks": ["100000000206","100000000012","100000000016"]
                     },
                 ]
+            }
+            
+            window.AndroidWebViewHandler.sendMessage(JSON.stringify({type: 'phoneNumberHandler', data: d }))
+        }
+
+        function myFunction2() {
+            var d = {
+                "self": {
+                    "number": "89991234567",
+                    "name": "Себе"
+                },
+                "recent": [
+                    {
+                        "number": "89992281799",
+                        "name": "Сабина",
+                        "banks": ["100000000012","100000000016"]
+                    },
+                    {
+                        "number": "89127445589",
+                        "name": "Аня",
+                        "banks": ["100000000056"]
+                    },
+                    {
+                        "number": "89129999888",
+                        "name": "Слава",
+                        "banks": ["100000000206","100000000012","100000000016"]
+                    },
+                ],
+                "universalSearch": "true"
             }
             
             window.AndroidWebViewHandler.sendMessage(JSON.stringify({type: 'phoneNumberHandler', data: d }))
